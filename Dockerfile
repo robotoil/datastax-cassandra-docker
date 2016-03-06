@@ -5,7 +5,8 @@ ENV DEBIAN_FRONTEND noninteractive
 #Install repos
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee /etc/apt/sources.list.d/webupd8team-java.list
 RUN echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list.d/webupd8team-java.list
-RUN echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/datastax.sources.list
+#RUN echo "deb http://debian.datastax.com/community stable main" | sudo tee -a /etc/apt/sources.list.d/datastax.sources.list
+RUN echo "deb https://dsa_email_address:password@debian.datastax.com/enterprise stable main" | sudo tee -a /etc/apt/sources.list.d/datastax.sources.list
 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
 RUN curl -L http://debian.datastax.com/debian/repo_key | sudo apt-key add -
